@@ -15,8 +15,3 @@ This project explores how Bitcoin behaves relative to the S&P 500, focusing on:
 - Swap the synthetic data generation with real BTC-USD and ^GSPC historical prices when internet or a local data dump is available.
 - Expand EDA with richer visuals once plotting libraries can be installed.
 - Transition exploratory code into reusable modules (e.g., `src/`) for feature engineering and backtesting.
-
-## Collaboration and Merge Notes
-- Clear notebook outputs before committing to reduce merge noise (`jupyter nbconvert --clear-output --inplace`).
-- Rebase frequently on the main branch to avoid drift and manually resolve any overlapping notebook cells using a notebook-aware merge tool (e.g., `nbdime`).
-- Keep generated artifacts (plots, large CSVs) out of version control when possible; they are now ignored via `.gitignore`.
