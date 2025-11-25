@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.env
+.venv
+
+# Data outputs
+/data/raw/*.csv
+/data/processed/*
+!/data/processed/.gitkeep
+/data/external/
+
+# Reports and artifacts
+/reports/figures/*.png
+/reports/figures/*.jpg
+/reports/figures/*.pdf
+
+# OS cruft
+.DS_Store
+Thumbs.db
