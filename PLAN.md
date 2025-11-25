@@ -37,3 +37,4 @@
 - Prefer deterministic data pulls (fixed start dates, documented sources).
 - Save intermediate datasets to `data/processed/` for reusability.
 - Capture key analyses in notebooks with clear markdown explanations.
+- Strip notebook outputs before committing to limit merge conflicts and rely on deterministic code to regenerate figures.
