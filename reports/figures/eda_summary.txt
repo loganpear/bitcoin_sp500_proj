@@ -1,0 +1,9 @@
+Records: 1303 trading days
+Date range: 2020-01-01 to 2024-12-27
+S&P 500 close range: 2634.70 to 4620.93
+Bitcoin close range: 2100.86 to 14875.09
+Mean daily return — S&P 500: 0.0000
+Mean daily return — Bitcoin: 0.0009
+Std daily return — S&P 500: 0.0121
+Std daily return — Bitcoin: 0.0333
+Return correlation (BTC vs S&P 500): 0.101
