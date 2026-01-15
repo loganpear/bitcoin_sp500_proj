@@ -1,78 +1,48 @@
-# Bitcoin vs. S&P 500: An Investment Portfolio Analysis
+# Bitcoin vs. S&P 500 Analysis
 
-This project conducts a comprehensive analysis of a dollar-cost averaging (DCA) investment strategy applied to Bitcoin (BTC) and the S&P 500 index (^GSPC). The analysis covers data collection, exploratory data analysis, investment simulation, and predictive modeling to provide a holistic view of the risks and rewards associated with each asset.
+This project explores how Bitcoin behaves relative to the S&P 500, focusing on:
+- Historical correlation between Bitcoin and the S&P 500.
+- Whether Bitcoin can act as a higher-volatility proxy during equity drawdowns.
+- Building data-driven signals to time Bitcoin dip-buying opportunities.
 
-## Project Goal
+## Current Status
+- Project structure established (`data/`, `notebooks/`, `reports/`).
+- Planning document added in `PLAN.md`.
+- A synthetic dataset (`data/raw/synthetic_btc_sp500.csv`) is generated to prototype the workflow because outbound data downloads are blocked in this environment. Once network access is available, replace it with real market data pulls.
+- Initial exploratory analysis is captured in `notebooks/01_data_collection_eda.ipynb` and summarized in `reports/figures/eda_summary.txt`.
 
-The primary goal of this project is to compare and contrast the performance of Bitcoin and the S&P 500 as investment assets under a consistent, long-term DCA strategy. It aims to fulfill the following objectives:
 
-*   **Simulate Real-World Investing**: Use real market data to simulate monthly investments over a multi-year period.
-*   **Analyze and Visualize Performance**: Go beyond simple returns to analyze portfolio growth, risk-adjusted returns (Sharpe Ratio), and drawdowns.
-*   **Explore Predictive Modeling**: Build and evaluate machine learning models (Random Forest and LSTM) to forecast future returns, and critically assess their effectiveness.
+# Project Plan: Bitcoin vs S&P 500 Portfolio Analysis
 
-## Project Structure
+## Objective
+Analyze and compare the risk, return, and correlation of monthly investments in Bitcoin and the S&P 500. Simulate dollar-cost averaging (DCA) strategies and explore predictive modeling for future returns.
 
-The project is organized into four distinct Jupyter notebooks, each focusing on a specific stage of the analysis pipeline.
+## Chronological Increments
 
-### 1. Data Loading and Cleaning (`01_data_loading_and_cleaning.ipynb`)
+### 1. Data Collection & EDA (Complete)
+- Download real daily price data for Bitcoin and S&P 500 using Yahoo Finance (`yfinance`).
+- Save to CSV and perform basic exploratory data analysis (EDA).
 
-*   **Objective**: To fetch, clean, and prepare the dataset for analysis.
-*   **Process**:
-    *   Downloads historical daily price data for `BTC-USD` and `^GSPC` from 2015 to 2024 using the `yfinance` API.
-    *   Handles missing values resulting from non-trading days using a forward-fill strategy.
-    *   Saves the cleaned, processed data to `data/processed/btc_sp500_data.csv` for use in subsequent notebooks.
+### 2. Investment Simulation
+- Simulate monthly investments ($100/month) in each asset.
+- Calculate and visualize portfolio growth, drawdowns, and volatility.
+- Compare performance between Bitcoin and S&P 500 DCA strategies.
 
-### 2. Exploratory Data Analysis (`02_exploratory_data_analysis.ipynb`)
+### 3. Advanced Statistical Analysis
+- Compute rolling correlations, Sharpe ratios, and other risk metrics.
+- Visualize and interpret results.
 
-*   **Objective**: To understand the statistical properties and historical behavior of the assets.
-*   **Analysis**:
-    *   Calculates and visualizes daily returns to understand volatility.
-    *   Plots normalized price evolution to compare long-term growth.
-    *   Examines the distribution of returns to identify risk profiles.
-    *   Computes a correlation matrix to assess the diversification potential between the two assets.
+### 4. Machine Learning (Planned)
+- Build and evaluate predictive models (e.g., Random Forest, LSTM) to forecast future returns or risk metrics for Bitcoin and the S&P 500.
+- Compare model performance and discuss practical limitations.
 
-### 3. Investment Simulation (`03_investment_simulation.ipynb`)
+### 5. Reporting & Presentation
+- Summarize findings in markdown and visualizations.
+- Write a clear conclusion and recommendations.
+- Polish README and notebook documentation for portfolio presentation.
 
-*   **Objective**: To simulate and evaluate a monthly dollar-cost averaging (DCA) strategy.
-*   **Simulation**:
-    *   Simulates a $100 monthly investment into both Bitcoin and the S&P 500.
-    *   Tracks and visualizes the growth of each portfolio against the total capital invested.
-    *   Calculates and visualizes portfolio drawdowns to quantify risk.
-    *   Computes the Sharpe Ratio to measure risk-adjusted returns.
+---
 
-### 4. Predictive Analysis (`04_predictive_analysis.ipynb`)
-
-*   **Objective**: To build and evaluate machine learning models for forecasting future returns.
-*   **Models**:
-    *   **Random Forest Regressor**: An ensemble model trained on lagged returns and rolling statistics.
-    *   **LSTM Network**: A deep learning model designed for time-series data.
-*   **Evaluation**:
-    *   Both models are trained and evaluated on their ability to predict the next day's returns.
-    *   Performance is measured using Root Mean Squared Error (RMSE) and R-squared (R²) scores.
-    *   The notebook concludes with a critical discussion of the models' effectiveness and the inherent difficulty of predicting financial markets.
-
-## How to Run This Project
-
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd bitcoin_sp500_proj
-    ```
-
-2.  **Install the dependencies:**
-    Make sure you have Python 3 installed. Then, install the required libraries using pip:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Run the Jupyter notebooks:**
-    Launch Jupyter and run the notebooks in sequential order (01 to 04) to replicate the full analysis.
-    ```bash
-    jupyter notebook
-    ```
-
-## Key Findings
-
-*   **High Risk, High Reward**: The DCA simulation shows that Bitcoin offered significantly higher returns than the S&P 500 over the analysis period, but also exposed the portfolio to much deeper and more frequent drawdowns.
-*   **Superior Risk-Adjusted Returns**: Despite its volatility, Bitcoin's high returns resulted in a better Sharpe Ratio, indicating strong performance even when accounting for risk.
-*   **The Challenge of Prediction**: Both the Random Forest and LSTM models were unable to reliably predict future returns, yielding R² scores close to zero. This outcome highlights the efficiency of financial markets and the difficulty of forecasting using historical price data alone.
+## Current Status
+- Data collection and basic EDA are complete in `notebooks/01_data_collection_eda.ipynb`.
+- Next: Simulate monthly investments and analyze portfolio performance.
