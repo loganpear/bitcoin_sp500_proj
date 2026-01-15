@@ -1,48 +1,39 @@
 # Bitcoin vs. S&P 500 Analysis
 
-This project explores how Bitcoin behaves relative to the S&P 500, focusing on:
+This project explores the relationship between Bitcoin and the S&P 500, focusing on:
 - Historical correlation between Bitcoin and the S&P 500.
-- Whether Bitcoin can act as a higher-volatility proxy during equity drawdowns.
-- Building data-driven signals to time Bitcoin dip-buying opportunities.
+- The viability of Bitcoin as a high-volatility investment alternative to traditional equities.
+- The performance of a dollar-cost averaging (DCA) investment strategy in both assets.
 
-## Current Status
-- Project structure established (`data/`, `notebooks/`, `reports/`).
-- Planning document added in `PLAN.md`.
-- A synthetic dataset (`data/raw/synthetic_btc_sp500.csv`) is generated to prototype the workflow because outbound data downloads are blocked in this environment. Once network access is available, replace it with real market data pulls.
-- Initial exploratory analysis is captured in `notebooks/01_data_collection_eda.ipynb` and summarized in `reports/figures/eda_summary.txt`.
+## Project Structure
 
+- `data/`: Holds raw and processed data. The project uses real daily price data for Bitcoin and the S&P 500 downloaded from Yahoo Finance (`yfinance`).
+- `notebooks/`: Contains the Jupyter notebooks for the analysis.
+  - `01_data_loading_and_cleaning.ipynb`: Loads and cleans the data from Yahoo Finance.
+  - `02_exploratory_data_analysis.ipynb`: Performs exploratory data analysis, including correlation analysis.
+  - `03_investment_simulation.ipynb`: Simulates a dollar-cost averaging investment strategy.
+  - `04_predictive_analysis.ipynb`: Explores predictive modeling for future returns.
+- `reports/`: Contains generated reports and figures.
 
-# Project Plan: Bitcoin vs S&P 500 Portfolio Analysis
+## Analysis and Findings
 
-## Objective
-Analyze and compare the risk, return, and correlation of monthly investments in Bitcoin and the S&P 500. Simulate dollar-cost averaging (DCA) strategies and explore predictive modeling for future returns.
+The analysis is conducted in a series of Jupyter notebooks, each focusing on a specific aspect of the project:
 
-## Chronological Increments
+1.  **Data Loading and Cleaning:** Raw daily price data for Bitcoin (BTC) and the S&P 500 (^GSPC) is fetched from Yahoo Finance for a specified date range. The data is then cleaned and prepared for analysis.
 
-### 1. Data Collection & EDA (Complete)
-- Download real daily price data for Bitcoin and S&P 500 using Yahoo Finance (`yfinance`).
-- Save to CSV and perform basic exploratory data analysis (EDA).
+2.  **Exploratory Data Analysis:** This notebook investigates the statistical properties of the two assets. It includes visualizations of price movements over time and correlation analysis to understand how the two assets move in relation to each other, both over the entire time period and in more recent years.
 
-### 2. Investment Simulation
-- Simulate monthly investments ($100/month) in each asset.
-- Calculate and visualize portfolio growth, drawdowns, and volatility.
-- Compare performance between Bitcoin and S&P 500 DCA strategies.
+3.  **Investment Simulation:** A dollar-cost averaging (DCA) investment strategy is simulated to compare the performance of regular, fixed investments in Bitcoin versus the S&P 500. The simulation calculates and visualizes portfolio growth, drawdowns, and risk-adjusted returns (Sharpe ratio).
 
-### 3. Advanced Statistical Analysis
-- Compute rolling correlations, Sharpe ratios, and other risk metrics.
-- Visualize and interpret results.
+4.  **Predictive Analysis:** This notebook explores the potential for building machine learning models to predict future returns or risk metrics.
 
-### 4. Machine Learning (Planned)
-- Build and evaluate predictive models (e.g., Random Forest, LSTM) to forecast future returns or risk metrics for Bitcoin and the S&P 500.
-- Compare model performance and discuss practical limitations.
+## Usage
 
-### 5. Reporting & Presentation
-- Summarize findings in markdown and visualizations.
-- Write a clear conclusion and recommendations.
-- Polish README and notebook documentation for portfolio presentation.
+To run this analysis, you will need to have Python and the required libraries installed.
 
----
-
-## Current Status
-- Data collection and basic EDA are complete in `notebooks/01_data_collection_eda.ipynb`.
-- Next: Simulate monthly investments and analyze portfolio performance.
+1.  Clone this repository.
+2.  Install the dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  Run the Jupyter notebooks in the `notebooks/` directory.
